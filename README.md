@@ -1,4 +1,4 @@
-# PluginDiskManager
+# LumiPluginDiskManager
 
 Lumi 编辑器插件。
 
@@ -21,7 +21,7 @@ Lumi 编辑器插件。
 
 ```swift
 dependencies: [
-    .package(path: "../PluginDiskManager"),
+    .package(path: "../LumiPluginDiskManager"),
 ],
 targets: [
     .target(name: "YourTarget", dependencies: ["PluginDiskManager"]),
