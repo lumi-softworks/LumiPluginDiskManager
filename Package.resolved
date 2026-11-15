@@ -1,0 +1,69 @@
+{
+  "originHash" : "7c6df351e3bb6fad4ecbf1945694af4379d3d20be40c18a5535abb78c6f10772",
+  "pins" : [
+    {
+      "identity" : "kitagenttool",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/KitAgentTool.git",
+      "state" : {
+        "revision" : "e07e1c1f1a5d89554152b0fd21a555e116d522bb",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "lumikernel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/LumiKernel.git",
+      "state" : {
+        "revision" : "c0aace6a4b0b428f3b059020327a558c470538ed",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "lumilocalization",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/LumiLocalization.git",
+      "state" : {
+        "revision" : "da8ca9d0cc77e9c1f979680f9cb79e87f79a3f87",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "lumilogging",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/LumiLogging.git",
+      "state" : {
+        "revision" : "ed01ea8d6e95c627be241a01924c75999b6d8256",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "lumiproviders",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/LumiProviders.git",
+      "state" : {
+        "revision" : "58db682f0b7153206f2c8e377f279eba99534fba",
+        "version" : "1.23.0"
+      }
+    },
+    {
+      "identity" : "lumiui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/LumiUI.git",
+      "state" : {
+        "revision" : "6071aeccea31a48039bdecfffbdc34a98e4e4b20",
+        "version" : "1.17.1"
+      }
+    },
+    {
+      "identity" : "providertoolmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lumi-softworks/ProviderToolManager.git",
+      "state" : {
+        "revision" : "ae298d0f65fbcfaeab1ff966be254b9f4bc764ce",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
