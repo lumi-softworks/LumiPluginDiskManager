@@ -2,9 +2,9 @@
   "originHash" : "7c6df351e3bb6fad4ecbf1945694af4379d3d20be40c18a5535abb78c6f10772",
   "pins" : [
     {
-      "identity" : "kitagenttool",
+      "identity" : "lumikitagenttool",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/lumi-softworks/KitAgentTool.git",
+      "location" : "https://github.com/lumi-softworks/LumiKitAgentTool.git",
       "state" : {
         "revision" : "e07e1c1f1a5d89554152b0fd21a555e116d522bb",
         "version" : "1.0.1"
