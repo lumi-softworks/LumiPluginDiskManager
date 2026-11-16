@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import SwiftUI
 
 /// Xcode 清理扫描进度视图
@@ -100,3 +103,4 @@ struct XcodeScanProgressView: View {
     }
 }
 
+#endif

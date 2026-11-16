@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import AppKit
 import Foundation
 
@@ -38,7 +41,9 @@ public final class DirectoryTreeService: @unchecked Sendable {
 
     @MainActor
     public func revealInFinder(path: String) {
+        #if os(macOS)
         NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
+        #endif
     }
 }
 
@@ -563,3 +568,5 @@ private struct SummaryNode {
     let isDirectory: Bool
     var size: Int64 = 0
 }
+
+#endif

@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import Foundation
 import os
 
@@ -28,7 +31,7 @@ public final class XcodeCleanService: @unchecked Sendable {
     // MARK: - Paths
 
     private func getPath(for category: XcodeCleanCategory) -> URL? {
-        let home = fileManager.homeDirectoryForCurrentUser
+        let home = fileManager.portableHomeDirectory
         let developer: URL
 
         if let customRoot = customRootDirectory {
@@ -245,3 +248,5 @@ actor XcodeScanCoordinator {
         continuations.removeAll()
     }
 }
+
+#endif

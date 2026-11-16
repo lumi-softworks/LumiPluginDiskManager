@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import KitAgentTool
 import Foundation
 
@@ -30,7 +33,7 @@ enum DiskManagerToolSupport {
     /// Returns the home directory when the input is missing/empty so the tool
     /// always has a usable root.
     static func resolveScanPath(_ raw: String?) -> String {
-        let home = FileManager.default.homeDirectoryForCurrentUser
+        let home = FileManager.default.portableHomeDirectory
         let trimmed = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         if trimmed.isEmpty || trimmed == "~" {
             return home.path
@@ -724,3 +727,5 @@ struct DeleteFilesTool: SuperAgentTool {
         return lines.joined(separator: "\n")
     }
 }
+
+#endif

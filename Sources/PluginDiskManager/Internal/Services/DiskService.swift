@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import AppKit
 import Foundation
 import os
@@ -54,7 +57,9 @@ public final class DiskService: SuperLog, @unchecked Sendable {
 
     @MainActor
     public func revealInFinder(url: URL) {
+        #if os(macOS)
         NSWorkspace.shared.activateFileViewerSelecting([url])
+        #endif
     }
 
     public func calculateSize(for url: URL) async -> Int64 {
@@ -259,3 +264,5 @@ public final class ProgressCounter: @unchecked Sendable {
         return (files, size)
     }
 }
+
+#endif

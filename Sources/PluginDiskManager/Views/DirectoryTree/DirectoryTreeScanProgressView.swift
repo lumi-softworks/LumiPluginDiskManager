@@ -1,3 +1,6 @@
+#if os(macOS)
+// 磁盘清理插件是 macOS 专属能力（AppKit / NSWorkspace / 全盘访问）。
+// iOS 目标只需要本模块可编译、不参与插件装配，因此整模块在 iOS 上为空。
 import SwiftUI
 
 /// 目录树扫描进度视图
@@ -10,7 +13,7 @@ struct DirectoryTreeScanProgressView: View {
         let scannedDirectories = viewModel.scanProgress?.scannedDirectories ?? 0
         let scannedTotal = scannedFiles + scannedDirectories
         let scannedBytes = viewModel.scanProgress?.scannedBytes ?? 0
-        let currentPath = viewModel.scanProgress?.currentPath ?? FileManager.default.homeDirectoryForCurrentUser.path
+        let currentPath = viewModel.scanProgress?.currentPath ?? FileManager.default.portableHomeDirectory.path
 
         VStack(spacing: 12) {
             // 扫描图标和动画
@@ -103,3 +106,4 @@ struct DirectoryTreeScanProgressView: View {
     }
 }
 
+#endif
